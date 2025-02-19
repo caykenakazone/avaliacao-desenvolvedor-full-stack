@@ -1,0 +1,88 @@
+/* Tailwind CSS - Importando os estilos base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset básico (opcional, você pode usar o normalize.css ou algo similar) */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Use sua fonte favorita aqui */
+  background-color: #dededf; /* Um cinza claro */
+  color: #1f2937; /* Texto em um cinza escuro */
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos padrão para elementos HTML */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #2563eb; /* Azul Tailwind */
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+
+}
+
+/* Botões */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Inputs */
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid #d1d5db; /* Cinza Tailwind */
+  padding: 0.5rem;
+  border-radius: 0.375rem; /* Border arredondada */
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #2563eb; /* Azul Tailwind */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3); /* Azul Tailwind com opacidade */
+}
+
+/* Estilos gerais de espaçamento */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Rodapé ou seções fixas */
+footer {
+  margin-top: auto;
+  padding: 1rem 0;
+  background: #1f2937; /* Cinza escuro */
+  color: white;
+  text-align: center;
+}
+
+.profile-image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
