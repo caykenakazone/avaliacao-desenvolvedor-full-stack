@@ -1,78 +1,92 @@
-# Avaliação Full Stack  
+# Avaliação Full Stack - Carlos Cayke
 
-Este desafio pode ser realizado em qualquer linguagem ou framework.  
+Este projeto Full Stack foi desenvolvido para demonstrar habilidades no desenvolvimento de aplicações modernas, utilizando tecnologias de ponta para criar um sistema completo, para criar um encurtador de url, desde o Front-End até o Back-End.
 
-Além dos requisitos que serão descritos, você é livre e encorajado a realizar melhorias que visem a evolução do produto.  
-Tenha em mente que o objetivo é criar o melhor serviço possível, considerando funcionalidades, eficiência, e experiência do usuário.  
+## 📌 Funcionalidades Implementadas
+- ✅ Encurtamento de URLs com redirecionamento
+- ✅ Exibição de estatísticas de acessos
+- ✅ Dashboard com gráficos interativos
+- ✅ API documentada com Swagger
+- ✅ Interface responsiva e moderna
+ 
+## 🛠 Tecnologias Utilizadas
 
-A divisão em 4 partes é um direcionamento para ajudar na progressão da complexidade.  
-**Não é necessário concluir todas as partes**, e as mesmas podem ser realizadas em qualquer ordem.  
+🌐 Front-End:
+- Next.js - Framework React para aplicações modernas e performáticas.
+- TailwindCSS - Biblioteca de estilização para um design responsivo e elegante.
+- Recharts - Utilizado para exibição de gráficos dinâmicos e interativos.
 
-## Parte 1  
+⚙️ Back-End:
+- Java com Spring Boot - Framework robusto para criação de APIs escaláveis.
+- Spring Data MongoDB - Facilita a integração e manipulação do banco NoSQL.
+- Lombok - Reduz a verbosidade do código através de anotações.
+- Swagger - Ferramenta de documentação da API para facilitar testes e integração.
 
-Você deve criar um serviço **encurtador de URLs** que será acessado via chamadas REST.  
+🗄 Banco de Dados:
+- MongoDB - Banco de dados NoSQL escalável e eficiente.
 
-O serviço deverá permitir o cadastro e redirecionamento de URLs.  
+## 🚀 Como Rodar o Projeto
+📌 Pré-requisitos:
+Certifique-se de ter as seguintes ferramentas instaladas no seu ambiente:
 
-Ao ser cadastrada, cada URL deve ter um **identificador não sequencial alfanumérico**, que será usado para acessá-la.  
+- Node.js (versão recomendada: 18+)
+- NPM ou Yarn
+- Java 17+
+- MongoDB instalado e rodando localmente ou em um serviço como MongoDB Atlas.
 
-As URLs serão acessadas pela rota raiz: `http://.../{identificador}`. Ao acessar essa rota, deve ocorrer o redirecionamento para o link original vinculado ao identificador.  
 
-Além disso, um frontend deve ser implementado para interagir com o serviço. Este deve incluir:  
-- Um **campo de entrada** para o cadastro de URLs a serem encurtadas.  
-- Uma tabela que exiba as **URLs encurtadas** junto com seus identificadores.  
-- Um **estilo visual moderno e responsivo**, priorizando usabilidade e experiência do usuário.  
+# 🎨 Como Rodar o Front-End
 
-## Parte 2  
+- Clone o repositório: 
+```bash
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+```
+- Acesse a pasta do Front-End: 
+```bash
+cd frontend
+```
+- Instale as dependências:
+```bash
+npm install
+```
+- Execute o projeto:
+```bash
+npm run dev
+```
+- O projeto estará rodando em:
+```bash
+http://localhost:3000
+```
 
-Com o aumento da popularidade da aplicação, torna-se necessário coletar informações úteis para os usuários.  
 
-O serviço deve coletar métricas a cada acesso, permitindo as seguintes consultas:  
-- Quantidade de visitas no último dia  
-- Quantidade de visitas na última hora  
-- Quantidade de visitas no último mês  
+# 🔧 Como Rodar o Back-End
 
-O frontend deve exibir essas métricas em uma tabela ou gráfico interativo, organizado por identificadores de URLs.  
+- Acesse a pasta do Back-End:
+```bash
+cd shorter-url-backend
+```
+- Configure o MongoDB: Certifique-se de que o banco está rodando localmente, será necessário criar um database, com nome "urlshortener"
+```bash
+spring.data.mongodb.uri=mongodb://localhost:27017/urlshortner
+```
+- Compile e execute a aplicação
+```bash
+mvn clean install
+mvn spring-boot:run
+```
+- O servidor estará rodando em:
+```bash
+http://localhost:8080
+```
+- Acesse a documentação Swagger:
+```bash
+http://localhost:8080/swagger-ui/index.html#
+```
 
-## Parte 3  
 
-Foi identificado que muitas URLs cadastradas apontam para websites inexistentes ou que se tornaram inativos.  
+## 📜 Autor
+- 👤 Carlos Cayke
+- 📧 Email: carloscaykebn@gmail.com
+- 🔗 LinkedIn: https://www.linkedin.com/in/carloscaykebn/
 
-Para resolver isso:  
-- Implemente um **healthcheck** das URLs no momento do cadastro, bloqueando URLs inválidas.  
-- Realize uma **verificação periódica** nas URLs já cadastradas. Caso uma URL falhe em 5 verificações consecutivas, ela deve ser **desativada**.  
-
-No frontend:  
-- Indique na tabela quais URLs estão ativas e quais foram desativadas, com um **sinal visual** como cores ou ícones.  
-
-## Parte 4  
-
-Com o aumento da utilização, a funcionalidade de *healthcheck* impacta o desempenho geral do sistema.  
-
-Divida o serviço em dois:  
-1. **Serviço Principal**: responsável pelo cadastro e redirecionamento de links.  
-2. **Serviço Validador**: realiza o *healthcheck* e comunica ao serviço principal quando uma URL ultrapassa o limite de falhas.  
-
-Garanta que os dois serviços possam operar de forma independente e escalável.  
-
-No frontend:  
-- Atualize as informações sobre o status das URLs em tempo real, sempre que houver alterações devido ao serviço validador.  
-
-## Critérios de Avaliação  
-
-O desafio será avaliado considerando os seguintes aspectos:  
-- **Clareza do código**: organização, nomenclatura e documentação.  
-- **Facilidade de manutenção**: modularidade e separação de responsabilidades.  
-- **Eficiênciada solução**: uso consciente de recursos e desempenho.  
-- **Estilo e usabilidade**: design moderno e intuitivo no frontend.  
-- **Escalabilidade**: capacidade de suportar um grande número de usuários e requisições.  
-- **Resiliência**: comportamento adequado em cenários de falha.  
-
-## Entrega  
-
-O projeto deve ser entregue em um repositório git, contendo:  
-1. Código-fonte completo do backend e frontend.  
-2. Documentação para instalação e execução.  
-3. (Opcional) Links para demonstração em produção (ex.: Heroku, Vercel).  
-
-Boa sorte!
+🚀 Projeto desenvolvido como parte de um desafio Full Stack.
