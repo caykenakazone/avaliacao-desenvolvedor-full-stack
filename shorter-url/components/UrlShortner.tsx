@@ -39,7 +39,7 @@ const UrlShortener: React.FC = () => {
 
     return (
         <div className="p-5 rounded-lg shadow-lg bg-white ">
-            <div className="flex flex-row items-center justify-center">
+            <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8 lg:flex-row lg:gap-10">
                 <Image
                     src="/logoSemF.png"
                     width={120}
