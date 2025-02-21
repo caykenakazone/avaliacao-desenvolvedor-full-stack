@@ -4,6 +4,7 @@ import UrlStats from "@/components/UrlStats";
 import { useUrls } from "@/context/UrlContext";
 import "@/styles/globals.css";
 import Footer from "@/components/Footer";
+import { RefreshCw } from "lucide-react";
 
 const Cliques: React.FC = () => {
     const { urls, loading, error } = useUrls();
@@ -16,7 +17,7 @@ const Cliques: React.FC = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <Menu />
-            
+
             <main className="flex-grow w-full md:w-[80%] lg:w-[70%] flex flex-col items-center justify-start mx-auto gap-10 p-4 md:p-8 lg:p-10">
 
                 <div className="w-full bg-white p-5 rounded-lg shadow-lg">
@@ -24,8 +25,15 @@ const Cliques: React.FC = () => {
                         Cliques na URL
                     </h2>
 
+
                     {/* Input para inserir o identificador da URL encurtada */}
                     <div className="flex flex-col md:flex-row gap-2 items-center justify-center mb-6">
+                        <button
+                            onClick={() => window.location.reload()}
+                            className="p-2 bg-blue-500 hover:bg-blue-700 text-white rounded-full transition flex items-center justify-center"
+                        >
+                            <RefreshCw size={20} />
+                        </button>
                         <input
                             type="text"
                             placeholder="Digite o Identificador da URL encurtada"
