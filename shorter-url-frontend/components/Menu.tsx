@@ -42,7 +42,7 @@ const Menu: React.FC = () => {
                 </li>
             </ul>
             
-            {/* Menu Lateral Mobile com animação */}
+            {/* Menu Lateral Mobile */}
             <motion.div
                 //initial define onde ele esta antes de abrir, animate e o estado do menu e muda de acordo com o estado
                 initial={{ y: "-100%", opacity: 0 }}

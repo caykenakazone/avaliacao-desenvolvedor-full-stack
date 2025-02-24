@@ -13,6 +13,7 @@ export default function HomePage() {
         <div id="short-url" className="w-full">
           <UrlShortener />
         </div>
+        {/* Cards  */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 lg:gap-6">
           <Card
             title="Encurte"

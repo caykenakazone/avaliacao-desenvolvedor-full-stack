@@ -6,7 +6,7 @@ const UrlList: React.FC = () => {
     if (loading) return <p>Carregando URLs...</p>;
     if (error) return <p className="text-red-500">{error}</p>;
    
-    //table que irá mostrar as informações das urls
+    //Table que irá mostrar as informações das urls
     return (
         <div className="w-full p-5 border border-gray-300 rounded-lg shadow-lg bg-white mx-auto">
             <h2 className="text-1xl md:text-2xl lg:text-3xl font-bold mb-4 text-center text-gray-800">URLs Encurtadas</h2>
